@@ -1,0 +1,6 @@
+#root {
+  max-width: 1600px; /* or any desired value */
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
