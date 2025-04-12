@@ -51,14 +51,6 @@ export default function PersonalFinanceSimulator() {
     { month: "Jun", current: 600000, whatIf: 750000 },
   ];
 
-  const expenseData = [
-    { name: "Rent", value: 25000, color: "#8884d8" },
-    { name: "Utilities", value: 5000, color: "#82ca9d" },
-    { name: "Groceries", value: 10000, color: "#ffc658" },
-    { name: "Subscriptions", value: 2000, color: "#ff8042" },
-    { name: "Miscellaneous", value: 8000, color: "#0088fe" },
-  ];
-
   // Improved color theme classes - lighter dark mode for better readability
   const themeClass = darkMode
     ? "bg-slate-800 text-slate-100"
@@ -159,8 +151,8 @@ export default function PersonalFinanceSimulator() {
             <button
               className={`p-2 rounded-full ${
                 darkMode
-                  ? "hover:bg-slate-600 text-slate-200"
-                  : "hover:bg-gray-200 text-gray-700"
+                  ? "bg-transparent hover:bg-slate-600 text-slate-200"
+                  : "bg-gray-100 hover:bg-gray-200 text-gray-700"
               }`}
               onClick={() => setDarkMode(!darkMode)}
               aria-label="Toggle theme"
@@ -174,17 +166,18 @@ export default function PersonalFinanceSimulator() {
             <button
               className={`p-2 rounded-full ${
                 darkMode
-                  ? "hover:bg-slate-600 text-slate-200"
-                  : "hover:bg-gray-200 text-gray-700"
+                  ? "bg-transparent hover:bg-slate-600 text-slate-200"
+                  : "bg-gray-100 hover:bg-gray-200 text-gray-700"
               }`}
             >
               <Bell className="h-5 w-5" />
             </button>
+
             <button
               className={`p-2 rounded-full ${
                 darkMode
-                  ? "hover:bg-slate-600 text-slate-200"
-                  : "hover:bg-gray-200 text-gray-700"
+                  ? "bg-transparent hover:bg-slate-600 text-slate-200"
+                  : "bg-gray-100 hover:bg-gray-200 text-gray-700"
               }`}
             >
               <Settings className="h-5 w-5" />
@@ -215,87 +208,102 @@ export default function PersonalFinanceSimulator() {
       <div className="flex flex-1 overflow-hidden">
         {/* Sidebar */}
         <aside
-  className={`w-16 md:w-64 border-r shrink-0 ${
-    darkMode 
-      ? "border-slate-700 bg-slate-900" 
-      : "border-gray-200 bg-white"
-  } hidden md:block`}
->
-  <nav className="p-4 space-y-3">
-    <button
-      onClick={() => setSelectedSection("financial-snapshot")}
-      className={`flex items-center space-x-3 w-full p-3 rounded-lg transition-all duration-200 focus:outline-none focus:ring-0 ${
-        selectedSection === "financial-snapshot"
-          ? darkMode
-            ? "bg-indigo-600 text-white font-medium"
-            : "bg-indigo-600 text-white font-medium"
-          : "bg-indigo-100 text-indigo-700 hover:bg-indigo-200"
-      }`}
-    >
-      <Wallet className={`h-5 w-5 ${
-        selectedSection === "financial-snapshot"
-          ? "text-white"
-          : "text-indigo-600"
-      }`} />
-      <span className="hidden md:inline text-sm">Your Financial Overview</span>
-    </button>
+          className={`w-16 md:w-64 border-r shrink-0 ${
+            darkMode
+              ? "border-slate-700 bg-slate-900"
+              : "border-gray-200 bg-white"
+          } hidden md:block`}
+        >
+          <nav className="p-4 space-y-3">
+            <button
+              onClick={() => setSelectedSection("financial-snapshot")}
+              className={`flex items-center space-x-3 w-full p-3 rounded-lg transition-all duration-200 focus:outline-none focus:ring-0 ${
+                selectedSection === "financial-snapshot"
+                  ? darkMode
+                    ? "bg-indigo-600 text-white font-medium"
+                    : "bg-indigo-600 text-white font-medium"
+                  : "bg-indigo-100 text-indigo-700 hover:bg-indigo-200"
+              }`}
+            >
+              <Wallet
+                className={`h-5 w-5 ${
+                  selectedSection === "financial-snapshot"
+                    ? "text-white"
+                    : "text-indigo-600"
+                }`}
+              />
+              <span className="hidden md:inline text-sm">
+                Your Financial Overview
+              </span>
+            </button>
 
-    <button
-      onClick={() => setSelectedSection("scenario-simulator")}
-      className={`flex items-center space-x-3 w-full p-3 rounded-lg transition-all duration-200 focus:outline-none focus:ring-0 ${
-        selectedSection === "scenario-simulator"
-          ? darkMode
-            ? "bg-indigo-600 text-white font-medium"
-            : "bg-indigo-600 text-white font-medium"
-          : "bg-indigo-100 text-indigo-700 hover:bg-indigo-200"
-      }`}
-    >
-      <LineChart className={`h-5 w-5 ${
-        selectedSection === "scenario-simulator"
-          ? "text-white"
-          : "text-indigo-600"
-      }`} />
-      <span className="hidden md:inline text-sm">What-If Scenario Planner</span>
-    </button>
+            <button
+              onClick={() => setSelectedSection("scenario-simulator")}
+              className={`flex items-center space-x-3 w-full p-3 rounded-lg transition-all duration-200 focus:outline-none focus:ring-0 ${
+                selectedSection === "scenario-simulator"
+                  ? darkMode
+                    ? "bg-indigo-600 text-white font-medium"
+                    : "bg-indigo-600 text-white font-medium"
+                  : "bg-indigo-100 text-indigo-700 hover:bg-indigo-200"
+              }`}
+            >
+              <LineChart
+                className={`h-5 w-5 ${
+                  selectedSection === "scenario-simulator"
+                    ? "text-white"
+                    : "text-indigo-600"
+                }`}
+              />
+              <span className="hidden md:inline text-sm">
+                What-If Scenario Planner
+              </span>
+            </button>
 
-    <button
-      onClick={() => setSelectedSection("backward-simulator")}
-      className={`flex items-center space-x-3 w-full p-3 rounded-lg transition-all duration-200 focus:outline-none focus:ring-0 ${
-        selectedSection === "backward-simulator"
-          ? darkMode
-            ? "bg-indigo-600 text-white font-medium"
-            : "bg-indigo-600 text-white font-medium"
-          : "bg-indigo-100 text-indigo-700 hover:bg-indigo-200"
-      }`}
-    >
-      <CreditCard className={`h-5 w-5 ${
-        selectedSection === "backward-simulator"
-          ? "text-white"
-          : "text-indigo-600"
-      }`} />
-      <span className="hidden md:inline text-sm">Reverse Decisions</span>
-    </button>
+            <button
+              onClick={() => setSelectedSection("backward-simulator")}
+              className={`flex items-center space-x-3 w-full p-3 rounded-lg transition-all duration-200 focus:outline-none focus:ring-0 ${
+                selectedSection === "backward-simulator"
+                  ? darkMode
+                    ? "bg-indigo-600 text-white font-medium"
+                    : "bg-indigo-600 text-white font-medium"
+                  : "bg-indigo-100 text-indigo-700 hover:bg-indigo-200"
+              }`}
+            >
+              <CreditCard
+                className={`h-5 w-5 ${
+                  selectedSection === "backward-simulator"
+                    ? "text-white"
+                    : "text-indigo-600"
+                }`}
+              />
+              <span className="hidden md:inline text-sm">
+                Reverse Decisions
+              </span>
+            </button>
 
-    <button
-      onClick={() => setSelectedSection("ai-assistant")}
-      className={`flex items-center space-x-3 w-full p-3 rounded-lg transition-all duration-200 focus:outline-none focus:ring-0 ${
-        selectedSection === "ai-assistant"
-          ? darkMode
-            ? "bg-indigo-600 text-white font-medium"
-            : "bg-indigo-600 text-white font-medium"
-          : "bg-indigo-100 text-indigo-700 hover:bg-indigo-200"
-      }`}
-    >
-      <HelpCircle className={`h-5 w-5 ${
-        selectedSection === "ai-assistant"
-          ? "text-white"
-          : "text-indigo-600"
-      }`} />
-      <span className="hidden md:inline text-sm">Your Financial Coach</span>
-    </button>
-  </nav>
-</aside>
-
+            <button
+              onClick={() => setSelectedSection("ai-assistant")}
+              className={`flex items-center space-x-3 w-full p-3 rounded-lg transition-all duration-200 focus:outline-none focus:ring-0 ${
+                selectedSection === "ai-assistant"
+                  ? darkMode
+                    ? "bg-indigo-600 text-white font-medium"
+                    : "bg-indigo-600 text-white font-medium"
+                  : "bg-indigo-100 text-indigo-700 hover:bg-indigo-200"
+              }`}
+            >
+              <HelpCircle
+                className={`h-5 w-5 ${
+                  selectedSection === "ai-assistant"
+                    ? "text-white"
+                    : "text-indigo-600"
+                }`}
+              />
+              <span className="hidden md:inline text-sm">
+                Your Financial Coach
+              </span>
+            </button>
+          </nav>
+        </aside>
 
         {/* Mobile Nav */}
         <div
@@ -531,7 +539,7 @@ export default function PersonalFinanceSimulator() {
                             If you had invested ₹1,40,000 in an index fund
                             instead of buying an iPhone 14 Pro, you would have
                             gained an additional ₹1,20,000 in value.
-                          </div>  
+                          </div>
                         </div>
                       </div>
                     </div>
