@@ -144,7 +144,7 @@ export default function PersonalFinanceSimulator() {
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <div className="flex items-center space-x-2">
             <Wallet className="h-6 w-6 text-indigo-500" />
-            <h1 className="text-xl font-bold">PersonalFinSim</h1>
+            <h1 className="text-xl font-bold">ForeSight</h1>
           </div>
 
           <div className="flex items-center space-x-4">
