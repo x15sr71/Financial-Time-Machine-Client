@@ -362,16 +362,30 @@ export default function PersonalFinanceSimulator() {
 
             {/* Scenario Simulator - Replaced with ScenarioPlanner component */}
             {selectedSection === "scenario-simulator" && (
-              <div>
-                <div className={`rounded-lg border p-6 ${cardClass}`}>
+             <div
+             className={`p-6 rounded-lg border shadow-sm transition-all hover:shadow-md ${
+               darkMode
+                 ? "bg-slate-700 border-slate-600 text-slate-100"
+                 : "bg-white border-slate-200 text-gray-900"
+             }`}
+           >
+           
+
                   <ScenarioPlanner />
-                </div>
+
               </div>
             )}
 
             {/* Backward Simulation */}
             {selectedSection === "backward-simulator" && (
-              <div className="p-6 rounded-lg border border-slate-200 shadow-sm bg-white transition-all hover:shadow-md">
+            <div
+            className={`p-6 rounded-lg border shadow-sm transition-all hover:shadow-md ${
+              darkMode
+                ? "bg-slate-700 border-slate-600 text-slate-100"
+                : "bg-white border-slate-200 text-gray-900"
+            }`}
+          >
+          
                 <div className="flex items-center mb-4 gap-2">
                   <span className="text-blue-600">🔄</span>
                   <h2 className="text-2xl font-bold">Reverse Decisions</h2>
@@ -550,7 +564,14 @@ export default function PersonalFinanceSimulator() {
 
             {/* AI Assistant */}
             {selectedSection === "ai-assistant" && (
-              <div className="p-6 rounded-lg border border-slate-200 shadow-sm bg-white transition-all hover:shadow-md">
+             <div
+             className={`p-6 rounded-lg border shadow-sm transition-all hover:shadow-md ${
+               darkMode
+                 ? "bg-slate-700 border-slate-600 text-slate-100"
+                 : "bg-white border-slate-200 text-gray-900"
+             }`}
+           >
+           
                 <h2 className="text-2xl font-bold mb-6">
                   Your Financial Coach
                 </h2>

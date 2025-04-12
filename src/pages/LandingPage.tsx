@@ -136,11 +136,9 @@ export default function LandingPage() {
           )}
         </button>
       </div>
-
-      <BackgroundBeams/>
-
+      <BackgroundBeams />
       {/* Hero Section */}
-      <div className="container mx-auto px-4 py-24 flex flex-col items-center relative">
+      <div className="container mx-auto px-4 py-24 flex flex-col items-center relative z-10">
         {/* Animated background lines */}
         <div className="hero-lines">
           <svg viewBox="0 0 1200 400" preserveAspectRatio="none">
@@ -188,21 +186,34 @@ export default function LandingPage() {
             <FlipText />
           </h1>
           <p className="mt-6 text-lg leading-8 text-muted-foreground">
-            Take control of your finances with powerful planning tools and AI-powered insights that adapt to your financial goals and lifestyle.
+            Take control of your finances with powerful planning tools and
+            AI-powered insights that adapt to your financial goals and
+            lifestyle.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <Button
               size="lg"
               onClick={() => navigate("/dashboard")}
-              className="flex items-center gap-2 px-6 py-6 rounded-xl bg-primary hover:bg-primary/90 text-lg"
+              className="group relative flex items-center gap-2 overflow-hidden
+     px-6 py-6 rounded-2xl text-lg font-semibold text-white
+     bg-gradient-to-r from-primary/80 to-purple-500
+     shadow-lg hover:brightness-110 hover:scale-[1.02]
+     transition-all duration-300 border-none outline-none"
             >
               Get Started
-              <ArrowRight className="h-5 w-5" />
+              <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Button>
+
             <Button
               variant="outline"
               size="lg"
-              className="px-6 py-6 rounded-xl border-2 text-lg"
+              className="group px-6 py-6 rounded-2xl text-lg font-medium 
+             bg-gradient-to-r from-primary/30 to-purple-200 
+             text-primary shadow-sm transition-all duration-300 
+             hover:bg-gradient-to-r hover:from-primary/40 hover:to-purple-300 
+             hover:text-white dark:bg-gradient-to-r dark:from-primary/20 dark:to-purple-300 
+             dark:text-primary dark:hover:bg-gradient-to-r dark:hover:from-primary/40 dark:hover:to-purple-400 dark:hover:text-white 
+             border-none"
             >
               Learn More
             </Button>
@@ -216,7 +227,6 @@ export default function LandingPage() {
           </div>
         </div>
       </div>
-
       {/* Features Section */}
       <div className="py-24 sm:py-32 relative">
         <div className="absolute inset-0 -z-10 bg-gradient-to-b from-muted/50 to-background"></div>
@@ -229,7 +239,8 @@ export default function LandingPage() {
               Everything you need to manage your finances
             </p>
             <p className="mt-6 text-lg text-muted-foreground">
-              Our platform combines powerful analytics with user-friendly interfaces to give you total control over your financial journey.
+              Our platform combines powerful analytics with user-friendly
+              interfaces to give you total control over your financial journey.
             </p>
           </div>
 
@@ -260,7 +271,6 @@ export default function LandingPage() {
           </div>
         </div>
       </div>
-
       {/* Testimonials */}
       <div className="py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -293,7 +303,6 @@ export default function LandingPage() {
           </div>
         </div>
       </div>
-
       {/* Privacy Section */}
       <div className="py-24 relative bg-muted/30">
         <div className="absolute inset-0 -z-10 bg-gradient-to-t from-muted/50 to-transparent"></div>
@@ -305,7 +314,9 @@ export default function LandingPage() {
             <h3 className="text-2xl font-bold">Your Privacy Comes First</h3>
           </div>
           <p className="text-center text-lg text-muted-foreground mb-10">
-            All your financial data is stored locally. No data is ever sent to external servers, ensuring complete confidentiality of your sensitive financial information.
+            All your financial data is stored locally. No data is ever sent to
+            external servers, ensuring complete confidentiality of your
+            sensitive financial information.
           </p>
           <div className="flex justify-center">
             <Button
@@ -317,31 +328,42 @@ export default function LandingPage() {
           </div>
         </div>
       </div>
-
       {/* Footer */}
-      <footer className="py-12 border-t">
+      <footer className="py-3 border-t">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="flex items-center space-x-2 mb-6 md:mb-0">
-              <Coins className="h-6 w-6 text-primary" />
-              <h1 className="text-xl font-bold">PersonalFinSim</h1>
+            <div className="flex items-center space-x-2 mb-2 md:mb-0">
+              <Coins className="h-4 w-4 text-primary" />
+              <h1 className="text-base font-medium">PersonalFinSim</h1>
             </div>
-            <div className="flex space-x-8">
-              <a href="#" className="text-muted-foreground hover:text-foreground">
+            <div className="flex space-x-4 text-xs">
+              <a
+                href="#"
+                className="text-muted-foreground hover:text-foreground"
+              >
                 Privacy
               </a>
-              <a href="#" className="text-muted-foreground hover:text-foreground">
+              <a
+                href="#"
+                className="text-muted-foreground hover:text-foreground"
+              >
                 Terms
               </a>
-              <a href="#" className="text-muted-foreground hover:text-foreground">
+              <a
+                href="#"
+                className="text-muted-foreground hover:text-foreground"
+              >
                 Contact
               </a>
-              <a href="#" className="text-muted-foreground hover:text-foreground">
+              <a
+                href="#"
+                className="text-muted-foreground hover:text-foreground"
+              >
                 About
               </a>
             </div>
           </div>
-          <div className="mt-8 text-center text-sm text-muted-foreground">
+          <div className="mt-3 text-center text-[10px] text-muted-foreground">
             © 2025 PersonalFinSim. All rights reserved.
           </div>
         </div>
