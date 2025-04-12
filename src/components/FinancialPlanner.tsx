@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import {
   ResponsiveContainer,
   LineChart,
@@ -22,7 +22,7 @@ import {
 } from "lucide-react";
 
 // Format currency for display
-const formatCurrency = (value) => {
+const formatCurrency = (value: number | bigint) => {
   return new Intl.NumberFormat("en-IN", {
     style: "currency",
     currency: "INR",

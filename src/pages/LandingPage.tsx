@@ -249,21 +249,13 @@ const InfiniteMovingCards = ({
           </div>
         ))}
       </div>
-      {/* Left Fade Overlay */}
+      {/* Left Fade Overlay - Now respects dark mode */}
       <div
-        className="absolute left-0 top-0 h-full w-1/5 pointer-events-none"
-        style={{
-          background:
-            "linear-gradient(to right, rgba(255,255,255,1), rgba(255,255,255,0))",
-        }}
+        className="absolute left-0 top-0 h-full w-1/5 pointer-events-none bg-gradient-to-r from-background to-transparent"
       />
-      {/* Right Fade Overlay */}
+      {/* Right Fade Overlay - Now respects dark mode */}
       <div
-        className="absolute right-0 top-0 h-full w-1/5 pointer-events-none"
-        style={{
-          background:
-            "linear-gradient(to left, rgba(255,255,255,1), rgba(255,255,255,0))",
-        }}
+        className="absolute right-0 top-0 h-full w-1/5 pointer-events-none bg-gradient-to-l from-background to-transparent"
       />
       <style>{`
         @keyframes moveCards {
