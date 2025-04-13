@@ -1,57 +1,47 @@
-# 💸 Personal Finance Simulator – Client
+# 💸 Personal Finance Simulator
 
-> **This is the client-side repository** of the Personal Finance Simulator – a visual, interactive, and AI-powered financial planning tool that helps you simulate your finances like a time machine. Explore different decisions, undo past ones, and get personalized financial guidance — all while preserving your privacy.
+This is the **client-side code** for the Personal Finance Simulator — a visual, interactive, and AI-powered tool that helps users explore their financial futures, undo past choices, and receive personalized financial guidance.
 
 ---
 
 ## 📌 Features
 
 ### 1. **Your Financial Overview**
-Get a clear breakdown of your current finances:
-- Monthly income & side income
-- Expenses (rent, utilities, subscriptions, etc.)
-- Debt (total debt & EMIs)
-- Savings & investments
-- Optional: Recurring income/expense tracker
+Get a snapshot of your current financial life:
+- Income, expenses, debt, savings, and investments
+- Optional: Recurring income/expense breakdown
 
 ### 2. **What-If Scenario Planner**
-Simulate future decisions like:
-- Getting a better-paying job
-- Increasing rent
-- Investing more
-- Large one-time purchases
+Simulate financial decisions like:
+- Switching to a better-paying job
+- Increasing rent or EMIs
+- Starting/increasing investments
 
-📊 Visualize how these changes impact your net worth over time with interactive charts.
+📈 See how your net worth evolves over time through dynamic charts.
 
 ### 3. **Backward Simulation**
-Undo a past decision and see how your life *could have been*. For example:
-- “What if I hadn’t bought that car?”
-- “What if I started SIPs 3 years ago?”
+Explore alternative outcomes by undoing past financial decisions.
 
 ### 4. **AI Financial Assistant**
-A smart, privacy-respecting assistant that offers:
-- Personalized budgeting tips
-- Investment strategy suggestions
-- Lifestyle adjustment advice
+Receive tips like:
+- “Reduce subscription costs to save ₹X/month”
+- “Starting SIPs now could grow your wealth by ₹Y in 10 years”
 
-🎯 Based on rules like 50/30/20 budgeting, compounding principles, and financial heuristics.
+🧠 Powered by budgeting heuristics and financial planning logic.
 
 ### 5. **Privacy-First Design**
-🔒 All your data stays:
-- **Local** to your device, or
-- **Encrypted** in your personal account
-
-**No data is sent to external servers.**
+- Data stays local or encrypted in your personal account
+- No external server tracking
 
 ---
 
 ## 🛠️ Tech Stack
 
 - **Frontend:** React, TypeScript, Tailwind CSS, ShadCN UI
-- **Charts:** Recharts
+- **Visualization:** Recharts
+- **AI Logic:** Local inference or optional LLM API
 - **State Management:** Zustand / Context API
-- **AI Assistant:** Local LLM integration or API-powered (can be swapped)
-- **Optional Backend (for login/data sync):** Supabase or Firebase
+- **Optional Backend (for auth & sync):** Supabase / Firebase
 - **Deployment:** Vercel / Netlify
 
 ---
