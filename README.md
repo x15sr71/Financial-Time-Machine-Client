@@ -1,6 +1,6 @@
-# 💸 Personal Finance Simulator
+# 💸 Personal Finance Simulator – Client
 
-A visual, interactive, and AI-powered financial planning tool that helps you simulate your finances like a time machine — explore different decisions, undo past ones, and get personalized financial guidance — all while preserving your privacy.
+> **This is the client-side repository** of the Personal Finance Simulator – a visual, interactive, and AI-powered financial planning tool that helps you simulate your finances like a time machine. Explore different decisions, undo past ones, and get personalized financial guidance — all while preserving your privacy.
 
 ---
 
@@ -59,7 +59,7 @@ A smart, privacy-respecting assistant that offers:
 ## 🚀 Getting Started
 
 ```bash
-git clone https://github.com/yourusername/finance-simulator.git
+git clone https://github.com/x15sr71/Financial-Time-Machine-Client.git
 cd Financial-Time-Machine-Client
 npm install
 npm run dev
